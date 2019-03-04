@@ -459,173 +459,373 @@
 // ctx.fillRect(157, 230, 90, 20); // bas 
 // ctx.fillRect(216, 243, 20, 150); // haut
 
-// Logguez dans la console 'Hello' 3 secondes après le rendu de la page.
-setTimeout(() => {
-  console.log('Hello');
-}, 3000)
+// // Logguez dans la console 'Hello' 3 secondes après le rendu de la page.
+// setTimeout(() => {
+//   console.log('Hello');
+// }, 3000)
 
-// Logguez dans la console 'Logged after 5 seconds' 5 secondes après le rendu de la page.
-setTimeout(() => {
-  console.log('Logged after 5 seconds');
-}, 5000)
+// // Logguez dans la console 'Logged after 5 seconds' 5 secondes après le rendu de la page.
+// setTimeout(() => {
+//   console.log('Logged after 5 seconds');
+// }, 5000)
 
-// Ajoutez un écouteur d'événement 'click' à l'objet window pour logguer dans la console 'Clicked' 3 secondes après le clique.
-winbdow.addEventListener('click', () => {
-  setTimeout(() => {
-    console.log('Cliked!');
-  }, 3000);
-});
+// // Ajoutez un écouteur d'événement 'click' à l'objet window pour logguer dans la console 'Clicked' 3 secondes après le clique.
+// winbdow.addEventListener('click', () => {
+//   setTimeout(() => {
+//     console.log('Cliked!');
+//   }, 3000);
+// });
 
-// Créez un div. Au survol de ce div logguez dans la console 'I was hovered 5.5 seconds ago' 5 secondes plus tard.
-const div = document.querySelector('');
-dropZone.addEventListener('mouseover', () => changeDropZoneState(true));
+// // Créez un div. Au survol de ce div logguez dans la console 'I was hovered 5.5 seconds ago' 5 secondes plus tard.
+// const div = document.querySelector('');
+// dropZone.addEventListener('mouseover', () => changeDropZoneState(true));
 
-// Créez dynamiquement une image avec src égal à http://lorempixel.com/400/200/.
-//  Quand l'image sera entièrement chargée, logguez dans la console 'Done!' et l'affichez sur la page.
-// En cas d'erreur de chargement, logguez dans la console 'Error'.
-const myImg = document.createElement('img');
-myImg.src = 'http://lorempixel.com/400/200/';
-myImg.onload = () =>{
-  console.log('Done!');
-  document.body.appendChild(myImg)
-}
-myImg.onerror = () =>{
-  console.log('Error');
-}
+// // Créez dynamiquement une image avec src égal à http://lorempixel.com/400/200/.
+// //  Quand l'image sera entièrement chargée, logguez dans la console 'Done!' et l'affichez sur la page.
+// // En cas d'erreur de chargement, logguez dans la console 'Error'.
+// const myImg = document.createElement('img');
+// myImg.src = 'http://lorempixel.com/400/200/';
+// myImg.onload = () =>{
+//   console.log('Done!');
+//   document.body.appendChild(myImg)
+// }
+// myImg.onerror = () =>{
+//   console.log('Error');
+// }
 
-// Créez dynamiquement une node de script avec l'url de la librarie lodash: https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js.
-// Quand le script sera téléchargé, appelez la fonction round pour arrondir le nombre 10.02.
-const myScript = document.createElement('script');
-myScript.src = 'https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js.';
-myScript.onload = () =>{
-  console.log('Done!');
-}
-document.body.appendChild(myScript)
-myScript.onerror = () =>{
-  console.log('Error');
-}
+// // Créez dynamiquement une node de script avec l'url de la librarie lodash: https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js.
+// // Quand le script sera téléchargé, appelez la fonction round pour arrondir le nombre 10.02.
+// const myScript = document.createElement('script');
+// myScript.src = 'https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js.';
+// myScript.onload = () =>{
+//   console.log('Done!');
+// }
+// document.body.appendChild(myScript)
+// myScript.onerror = () =>{
+//   console.log('Error');
+// }
 
-// Récupérez l'information du profil de Han Solo (son id dans la base de données est 14). Ensuite affichez sur votre page ces données: nom, sexe, date de naissance, couleur des yeux, couleur des cheveux.
-let xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = () => {
-  if(whttp.readyState == 4 && xhttp.status == 200){
-    const rawValue = xhttp.responseText;
-    const parsedValue = JSON.parse(rawValue);
+// // Récupérez l'information du profil de Han Solo (son id dans la base de données est 14). Ensuite affichez sur votre page ces données: nom, sexe, date de naissance, couleur des yeux, couleur des cheveux.
+// let xhttp = new XMLHttpRequest();
+// xhttp.onreadystatechange = () => {
+//   if(whttp.readyState == 4 && xhttp.status == 200){
+//     const rawValue = xhttp.responseText;
+//     const parsedValue = JSON.parse(rawValue);
 
-    const hanSoloInfo = document.createElement('div');
-    hanSoloInfo.innerHTML = `
-      <p>Nom: ${parsedValue.name}</p>
-      <p>Sexe: ${parsedValue.gender}</p>
-      <p>Date de naissance: ${parsedValue.birth_year}</p>
-    `
-    document.body.appendChild(hanSoloInfo);
-  }
-};
-xhttp.open('GET', 'https://swapi.co/api/people/14/', true);
-xhttp.send();
+//     const hanSoloInfo = document.createElement('div');
+//     hanSoloInfo.innerHTML = `
+//       <p>Nom: ${parsedValue.name}</p>
+//       <p>Sexe: ${parsedValue.gender}</p>
+//       <p>Date de naissance: ${parsedValue.birth_year}</p>
+//     `
+//     document.body.appendChild(hanSoloInfo);
+//   }
+// };
+// xhttp.open('GET', 'https://swapi.co/api/people/14/', true);
+// xhttp.send();
 
-// Trouvez toutes les personnes avec le nom de famille Skywalker. Affichez leur profiles sur votre page.
-let xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = () => {
-  if(whttp2.readyState == 4 && whttp2.status == 200) {
-    console.log(xhttp2.responseText)
-    const rawValue = xhttp2.responseText;
-    const parsedValue = JSON.parse(rawValue);
+// // Trouvez toutes les personnes avec le nom de famille Skywalker. Affichez leur profiles sur votre page.
+// let xhttp = new XMLHttpRequest();
+// xhttp.onreadystatechange = () => {
+//   if(whttp2.readyState == 4 && whttp2.status == 200) {
+//     console.log(xhttp2.responseText)
+//     const rawValue = xhttp2.responseText;
+//     const parsedValue = JSON.parse(rawValue);
 
-    parsedfValue.results.forEach(person => {
-      const parsonDiv = document.createElement('div');
-      personDiv.innerHTML = `
-        <hr>
-        <p>Nom: ${person.name}</p>
-        <p>Sexe: ${person.gender}</p>
-        <p>Date de naissance: ${person.birth_year}</p>
-      `
-      document.body?appendChild(personDiv);
-    })
-  }
-};
-xhttp2.open('GET', 'https://swapi.co/api/people/?search=skywalker', true);
-xhttp2.send();
+//     parsedfValue.results.forEach(person => {
+//       const parsonDiv = document.createElement('div');
+//       personDiv.innerHTML = `
+//         <hr>
+//         <p>Nom: ${person.name}</p>
+//         <p>Sexe: ${person.gender}</p>
+//         <p>Date de naissance: ${person.birth_year}</p>
+//       `
+//       document.body?appendChild(personDiv);
+//     })
+//   }
+// };
+// xhttp2.open('GET', 'https://swapi.co/api/people/?search=skywalker', true);
+// xhttp2.send();
 
-// Récupérez et affichez les données de 5 planètes avec les ids suivants: 
-const planets = [1, 2, 3, 4, 5];
-planets.forEach(pnaletId => {
-  let xhttp = new XMLHttpRequest();
-  xhttp.onredaystatechange = () => {
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-     console.log(xhttp.responseText)
-    }
-  };
-  xhttp.open('GET', 'https://swapi.co/api/planets/'+planetId, true);
-  xhttp.send();
-})
-
-
-// Créez une promise (promesse) qui retourne une chaîne de caractères 'Hello' immediatement. Récupérez et logguez la valeur qu'elle retourne.
-constmyPromise = new Promise((resolve, reject) => {
-  if (5 > 3) {
-    setTimeout(() => {
-      resolve('Hello');
-    }
-  } else {
-    reject('Error');
-  }
-});
-
-mypromise
-  .then(result => console.log(result))
-  .catch(error => console.log(error));
-
-// Créez une promise qui retourne un nombre N. Enchaînez le traitement de la promise pour effectuez les operations suivantes:
-// multiplier N par 2
-// ensuite soustraire 1
-// ensuite decrementer de 2
-// ensuite augmenter de 10. Logguez le résultat réçu.
-const getNum = new Promise((resolve, reject) => {
-  resolve(10);
-});
-getNum
-  .then(num => {
-    return num * 2;
-  })
-  .then(num => {
-    return num - 1;
-  })
-  .then(res => {
-    console.log('res', res);
-  })
-  .catch(err => {
-    console.log('err', err);
-  })
+// // Récupérez et affichez les données de 5 planètes avec les ids suivants: 
+// const planets = [1, 2, 3, 4, 5];
+// planets.forEach(pnaletId => {
+//   let xhttp = new XMLHttpRequest();
+//   xhttp.onredaystatechange = () => {
+//     if (xhttp.readyState == 4 && xhttp.status == 200) {
+//      console.log(xhttp.responseText)
+//     }
+//   };
+//   xhttp.open('GET', 'https://swapi.co/api/planets/'+planetId, true);
+//   xhttp.send();
+// })
 
 
-// Placeholder API: https://jsonplaceholder.typicode.com/ Récupérez et affichez un article avec l'id 25, ensuite récupérez et affichez ses commentaires.
-fetch('https://jsonplaceorder.typicode.com/posts/25')
-  .then(reponse => reponse.json())
-  .then(result=> {
-    console.log('result', result);
-  })
+// // Créez une promise (promesse) qui retourne une chaîne de caractères 'Hello' immediatement. Récupérez et logguez la valeur qu'elle retourne.
+// constmyPromise = new Promise((resolve, reject) => {
+//   if (5 > 3) {
+//     setTimeout(() => {
+//       resolve('Hello');
+//     }
+//   } else {
+//     reject('Error');
+//   }
+// });
 
-// Utilisez l'API de https://reqres.in/ et la méthode fetch qui retourne une promise. Récupérez et affichez les informations de l'utilisateur avec l'id 5.
-fetch('https://reqres.in/5')
-  .then(reponse => reponse.json())
-  .then(result=> {
-    console.log('result', result);
-  })
+// mypromise
+//   .then(result => console.log(result))
+//   .catch(error => console.log(error));
 
-// Créez un formulaire d'inscription. A la soumission du formulaire envoyez une requête pour créez un nouvel utilisateur. Sauvegardez ces données dans les cookies.
-const signupData = {
-  email: 'test@ynov.com',
-  password: 'azerty'
-  lastname: 'Toto'
-}
-fetch('https://reqres.in/api/register', {
-  method: 'POST',
-  body: JSON.stringify(signupDate),
-  hedaers: {
-    'Content-Type': 'application/json'
-  }
-})
-  .then(response => response.json())
-  .then(result => console.log('result', result));
+// // Créez une promise qui retourne un nombre N. Enchaînez le traitement de la promise pour effectuez les operations suivantes:
+// // multiplier N par 2
+// // ensuite soustraire 1
+// // ensuite decrementer de 2
+// // ensuite augmenter de 10. Logguez le résultat réçu.
+// const getNum = new Promise((resolve, reject) => {
+//   resolve(10);
+// });
+// getNum
+//   .then(num => {
+//     return num * 2;
+//   })
+//   .then(num => {
+//     return num - 1;
+//   })
+//   .then(res => {
+//     console.log('res', res);
+//   })
+//   .catch(err => {
+//     console.log('err', err);
+//   })
 
+
+// // Placeholder API: https://jsonplaceholder.typicode.com/ Récupérez et affichez un article avec l'id 25, ensuite récupérez et affichez ses commentaires.
+// fetch('https://jsonplaceorder.typicode.com/posts/25')
+//   .then(reponse => reponse.json())
+//   .then(result=> {
+//     console.log('result', result);
+//   })
+
+// // Utilisez l'API de https://reqres.in/ et la méthode fetch qui retourne une promise. Récupérez et affichez les informations de l'utilisateur avec l'id 5.
+// fetch('https://reqres.in/5')
+//   .then(reponse => reponse.json())
+//   .then(result=> {
+//     console.log('result', result);
+//   })
+
+// // Créez un formulaire d'inscription. A la soumission du formulaire envoyez une requête pour créez un nouvel utilisateur. Sauvegardez ces données dans les cookies.
+// const signupData = {
+//   email: 'test@ynov.com',
+//   password: 'azerty'
+//   lastname: 'Toto'
+// }
+// fetch('https://reqres.in/api/register', {
+//   method: 'POST',
+//   body: JSON.stringify(signupDate),
+//   hedaers: {
+//     'Content-Type': 'application/json'
+//   }
+// })
+//   .then(response => response.json())
+//   .then(result => console.log('result', result));
+
+
+// // Quand le rendu de la page sera terminé, utilisez les selecteurs jQuery pour sélectionner et logguer:
+// $(document).ready(() => {
+
+// // toutes les balises <div>
+//   const divs = $('div');
+//   console.log('divs', divs);
+
+// // toutes les balises avec le nom de classe js-paragraph
+//   console.log('class', $('.js-paragraph'));
+
+// // la balise avec l'id js-unique-paragraph
+//   console.log('id', $('#js-unique-paragraph'));
+
+// // le premier titre <h3>
+//   console.log('first h3', $('h3:first'));
+
+// // le premier <th> du premier <tr>
+//   console.log('premier th', $('tr:first th:first'));
+
+// // le premier <td> du chaque <tr>
+//   console.log('premier td', $('tr td:first-child'));
+
+// // tous les lien
+//   console.log('lien', $('a'));
+
+// // tous les lien externes (ceux qui ont l'attribut target égal à _blank)
+//   console.log($('a[target="_blank"]'));
+
+// // tous les lien internes (ceux qui n'ont pas d'attribut target égal à _blank)
+//   console.log($('a[target!="_blank"]'));
+
+// // tous les boutons dans un formulaire
+//  console.log('bouton', $(':button'));
+// });
+
+
+// // Récupérez et logguez dans la console le contenu du titre de la page.
+// const title = $('h1').text();
+// console.log('title', title);
+
+// // Changez le contenu du titre de la page à 'My page title'.
+// $('h1').text('My page title');
+
+// // Récupérez et logguez dans la console le HTML de l'article.
+// const articleContent = $('#js-article').html
+// console.log('articleContent', articleContent);
+
+// // Changez le contenu de l'article à
+
+// // <h2>This is my article.</h2>
+// // <p>This is my article's content.</p>
+// // <a href="https://example.com">Read more</a>
+// $('#js-article').html(`
+//   <h2>This is my article.</h2>
+//   <p>This is my article's content.</p>
+//   <a href="https://example.com">Read more</a>
+//  `)
+
+// // Récupérez et logguez dans la console la valeur du champ de saisie avec l'id js-search.
+// const inputValue = $('#js-search').val();
+// console.log('inputValue', inputValue);
+
+// // Changez la valeur du champ de saisie à 'Beagles'
+// $('#js-search').val('Beagles');
+
+// $('#js-search-form')[0].addEventListener('submit', (event) => {
+//   event.preventDefault();
+//   let textValue = $('#js-search').val();
+//   if (textValue === 'chat') || texteValue ==='chat') {
+//     $('"js-search-result').html(`
+//     `)
+//   }
+//   else {
+//     $('#js-search-result').html(`
+//     <p>Pas de resultats pour la recherche : <strong>' + ${textValue} + '</strong></p>
+//     `)
+//   }
+// });
+
+
+// // Ajoutez la classe 'alert-primary' au <div>.
+// $('#js-alert').addClass('alert-primary');
+
+// // Supprimez la classe 'alert' du <div>. Supprimez la classe 'alert-primary' du <div>.
+// $('#js-alert').removeClass('alert-primary');
+
+// // Ajoutez d'un coup les classes 'alert' et 'alert-warning' au <div>.
+// $('#js-alert').addClass('alert alert-warning');
+
+// // Vérifiez si le <div> possède déjà la classe 'alert-warning'. Si oui, supprimez-la.
+// if ($('#js-alert').hasClass('alert-warning')) {
+//   $('#js-alert').removeClass('alert-warning');
+// }
+
+// // En cliquant sur le bouton #js-btn, basculez la classe 'alert-success': premier clique ajoute la classe, deuxième clique l'enlève, troisième l'ajoute de nouveau, etc.
+// $('#js-btn')[0].addEventListener('click', () => {
+//   $('#js-alert').toglleClass('alert-success');
+// });
+
+// // Récupérez et logguez dans la console la couleur du fond du bouton.
+// console.log($('#js-btn').css('background-color'));
+
+// // Passez la couleur du fond du bouton en #71b8af.
+// $('#js-btn').css('background-color', '#71b8f');
+
+// // Changez d'un coup la couleur du texte du bouton à #fff2d5 et le radius de la bordure à 3px.
+// $('#js-btn').css({
+//   color : '#fff2d5',
+//   'border-radius': '3px'
+// })
+
+// // Vérifiez si le <div> a la classe alert-danger. Si oui, ajoutez la classe text-danger au <p> et supprimez la classe btn-success du bouton. 
+// // Au clique sur le bouton ajoutez la propriété css display égale à none au <div>.
+// if ($('#js-danger-alert').hasClass('alert-danger')) {
+//   $('p').addClass('text-danger');
+//   $('#js-danger-alert-btn').removeClass('.btn-sucess');
+// }
+// $('#js-danger-alert-btn')[0].addEventListener('click'), () => {
+//   $('#js-danger-alert').css({
+//     display: 'none'
+//   });
+// });
+
+
+// // Créez un bouton. Si ce bouton est cliqué, logguez dans la console 'Clicked!'. Si ce bouton est cliqué plus de 5 fois, enlevez son écouteur d'événement 'click'.
+// document.querySelector('#btn').addEventListener('click', () => {});
+// $('#btn').click(() => {});
+// $('#btn').on('click', () => {});
+
+// let counter = 0;
+// $('#js-btn').click(() => {
+//  counter++; 
+//  if (counter > 5) {
+//   $('#js-btn').off('click')
+//  }
+// console.log('counter', counter);
+// })
+
+// // Créez un div bleu. Si on le survole, il passe en vert. Si on sort le curseur du div, il redevient bleu. Utilisez les méthodes mouseenter, mouseleave ou hover.
+// $('#js-hovered').mouseenter(() => {
+//   $('#js-hovered').css('background-color', 'green');
+// })
+
+// $('#js-hovered').mouseleave(() => {
+//   $('#js-hovered').css('background-color', 'blue');
+// })
+
+// function changeBgColor(color) {
+//   $('#js-hovered').css('background-color', 'color');
+// }
+
+// // Si le paragraphe avec l'id js-tooltip-wrapper est survolé, affichez le span avec l'id js-tooltip. Si il n'est plus survolé, cachez le span.
+// $('#js-tooltip-wrapper').mouseenter(() => {
+//   $('#js-tooltip').css({
+//     display: 'inline'
+//   }
+// })
+
+// $('#js-tooltip-wrapper').mouseleave(() => {
+//   $('#js-tooltip').css({
+//     display: 'none'
+//   }
+// })
+
+// // Affichez l'alerte si le bouton #js-show-alert est cliqué. Cachez-la si le bouton #js-hide-alert est cliqué.
+// $('#js-show-alert').click(() => {
+//   $('js-alert').show(); //afficher
+//   $('js-alert').toggle(); //afficher/cacher
+//   $('js-alert').slideDown(); //afficher avec l'animation "glissé"
+//   $('js-alert').fadeIn(); //afficher avec l'animation "fondu"
+// });
+
+// $('#js-hide-alert').click(() => {
+//   $('js-alert').hide(); //cacher
+//   $('js-alert').slideUp(); //cacher avec l'animation "glissé"
+//   $('js-alert').fadeOut(); //cacheravec l'animation "fondu"
+// });
+
+// // Au clique sur le bouton avec l'id js-btn-fade-in faites apparaître le div avec l'animation fondu (fade in). 
+// // Au clique sur le bouton avec l'id js-btn-fade-out faites disparaître le div avec l'animation fondu (fade out).
+// $('#js-btn-fade-in').click(() => {
+//   $('js-fade-in').fadeIn(); 
+// });
+// ('#js-btn-fade-out').click(() => {
+//   $('js-fade-out').fadeOut(); 
+// });
+
+// // Appliquez une animation au div #js-animation-1: ce <div> se deplace à 300px de gauche à droit en 700 millisecondes 3 secondes après la fin du rendu de la page. Utilisez les méthodes delay et animate.
+// $('#js-animation-1')
+//   .delay(1000)
+//   .animate({
+//     left: '300px'
+//   }, 700)
+//   .animate({
+//     width: '200px'
+//   }, 500)
+//   .animate({
+//     height: '700px'
+//   }, )
